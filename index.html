@@ -20,11 +20,13 @@
 <!--setup main sections for instructions, links to list home page and beers, input field and search button for cocktails, and modal for alert.-->
 <body>
     <main>
-        <section class="centered">
-            <input id= "drinksSaved" class="input-group-field inputSave" type="text" placeholder= "Save Drink Names Here" value="">
-            <button type="button" class="button secondary large button-radius saveButton" onclick="createFavoriteList()">Save</button>
-            <ul id="drinks"></ul>
-          </section>
+        <section class="center">
+            <form>
+                <input type="text" name="saveDrinkName" id="saveDrinkName" placeholder= "Save Drink Names Here">
+                <button type="submit" id="saveButton">Save</button>
+            </form>
+        </section>
+        <section id="drinkHistory"></section>
         <section class="order">
             <h1>Search below to find the ingredients of you favorite cocktail!</h1>
             <form>

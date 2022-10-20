@@ -38,38 +38,21 @@
         text-shadow: none;
     }    
   }
+
 /*style to push content off of the bottom of the page*/   
 main {
     margin-bottom: 50px;
 }
 
-.homeImg {
-    width: 100%;
-    height: auto;
-}
 /*style for the body background color*/
 body {
     background-color: black;
 }
-/*style to center beer list modal*/
+
 .center {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0px 10px 0px;
-}
-/*style to row the search titles, cocktails link, and beer link*/
-.row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.cocktails {
-    background-color: rgb(154, 154, 154);
-    border: 2px solid black;
-    height: 600px;
-    width: 400px;
 }
 /*style to order the cocktail directory*/
 .order {
@@ -77,6 +60,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 /*style for cocktail directory input field, button, and button hover*/
 #cocktailName {
     border-radius: 5px;
@@ -110,55 +94,7 @@ body {
 h1 {
     color: white;
 }
-/* start Homepage Styles-------------------------------------*/
-.centered {
-    text-align: center;
-    margin: auto;
-}
 
-.input-group-rounded .input-group-field {
-    border-radius: 20px;
-    width: 50%;
-    align-items: center;
-}
-
-.input-group-field {
-    border-radius: 5px;
-}
-
-.saveButton {
-    border-radius: 5px;
-    margin: 1rem 0rem;
-}
-
-.clearButton {
-    height: auto;
-    width: auto;
-    border-radius: 5 px;
-    color: white;
-    font-size: 18px;
-    align-items: flex-end;
-    margin: 0px 5px;
-}
-
-.inputSave {
-    border-radius: 5px;
-    margin: auto;
-    text-align: center;
-}
-
-.listLook {
-    height: auto;
-    width: 50%;
-    border-radius: 5px;
-    background-color: #767676;
-    color: white;
-    padding: 5px;
-    margin: 2px auto;
-    text-align: center;
-}
-
-/*end Homepage Styles-----------------------------------*/
 /*style for search titles*/
 h4 {
     text-align: center;
@@ -166,28 +102,7 @@ h4 {
     font-family: "Pacifico",sans-serif;
     text-decoration: underline;
 }
-/*style for directory link image size*/
-.drinkImg {
-   height: 400px;
-   width: 300px;
-}
-/*style for beer directory input field, button, and button hover*/
-#beerName {
-    border-radius: 5px;
-    padding: 2px;
-    text-align: center;
-}
 
-#beerButton {
-    border-radius: 5px;
-    background-color: rgb(54, 104, 255);
-    color: white;
-    padding: 3px;
-}
-
-#Button:hover {
-    background-color: rgb(109, 145, 255);
-}
 /*for pop up alerts */
 #modal {
     display: none;
@@ -230,58 +145,7 @@ h4 {
   text-decoration: none;
   cursor: pointer;
 }
-/*style for beer directory information*/
-.listStyle {
-    text-align: start;
-    font-size: 18px;
-    width: 90%;
-    border-bottom: 2px solid black;
-}
 
-.listStyle:hover {
-    color: rgb(54, 104, 255);
-}
-
-.listStyle:active {
-    color: darkblue;
-}
-
-.beerSquare {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    border: 2px solid black;
-    height: auto;
-}
-
-.beerSquare > h3 {
-    width: 40%;
-}
-
-.beerImg {
-    height: 400px;
-    width: auto;
-}
-/*style for links to home list and directories*/
-.goList {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(54, 104, 255);
-    border-radius: 5px;
-    padding: 8px;
-    margin-bottom: 25px;
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.goList:hover {
-    background-color: rgb(109, 145, 255);
-}
-
-.buttonRow {
-    display: flex;
-}
 /*style for cocktail directory information*/
 #ingredients {
     display: flex;
