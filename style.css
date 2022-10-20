@@ -96,18 +96,13 @@ body {
 }
 
 #cocktailRandom {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(54, 104, 255);
     border-radius: 5px;
-    padding: 8px;
-    margin-bottom: 25px;
-    margin-right: 10px;
-    font-weight: bold;
+    background-color: rgb(54, 104, 255);
+    padding: 3px;
+    color: white;
 }
 
 #cocktailRandom:hover {
-    cursor: pointer;
     background-color: rgb(109, 145, 255);
 }
 
