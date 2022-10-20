@@ -49,11 +49,26 @@ body {
     background-color: black;
 }
 
-.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#saveCocktail {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
 }
+
+#saveButton {
+    color: white;
+    background-color: rgb(54, 104, 255);
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+}
+
+#saveButton:hover {
+    background-color: rgb(109, 145, 255);
+    cursor: pointer;
+}
+
 /*style to order the cocktail directory*/
 .order {
     display: flex;
@@ -73,6 +88,7 @@ body {
     background-color: rgb(54, 104, 255);
     padding: 3px;
     color: white;
+    cursor: pointer;
 }
 
 #cocktailButton:hover {
@@ -84,6 +100,7 @@ body {
     background-color: rgb(54, 104, 255);
     padding: 3px;
     color: white;
+    cursor: pointer;
 }
 
 #cocktailRandom:hover {
