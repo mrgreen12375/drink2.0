@@ -49,14 +49,23 @@ body {
     background-color: black;
 }
 
-#saveCocktail {
-    height: 30px;
+/*style for the save coctail form*/
+#save-cocktail-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    text-align: center;
-    border-radius: 5px;
 }
 
-#saveButton {
+#save-cocktail {
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+}
+
+.saveButton {
     color: white;
     background-color: rgb(54, 104, 255);
     margin: 10px;
@@ -64,8 +73,28 @@ body {
     border-radius: 5px;
 }
 
-#saveButton:hover {
+.saveButton:hover {
     background-color: rgb(109, 145, 255);
+    cursor: pointer;
+}
+
+#saved-cocktail-list li{
+    color: white;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+}
+
+#saved-cocktail-list button {
+    font-size: 20px;
+    color: white;
+    background-color: grey;
+    border: none;
+}
+
+#saved-cocktail-list button:hover{
+    font-weight: bold;
     cursor: pointer;
 }
 

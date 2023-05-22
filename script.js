@@ -1,3 +1,36 @@
+const form = document.querySelector('#save-cocktail-form');
+const input = document.querySelector('#save-cocktail');
+const taskList = document.querySelector('#saved-cocktail-list');
+let taskID = 0;
+
+taskList.addEventListener('click', function(e) {
+    if (e.target.tagName === 'BUTTON') {
+        e.target.parentElement.remove();
+        let inputTask = document.getElementById('save-cocktail');
+        localStorage.setItem('email', inputTask.value);
+    } else if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('task-complete');
+    }
+});
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log(input.value);
+    const newTask = document.createElement('li');
+    const removeBtn = document.createElement('button');
+    let savedInput = input.value;
+    removeBtn.innerText = 'X';
+    newTask.innerText = input.value;
+    newTask.appendChild(removeBtn);
+    taskList.appendChild(newTask);
+
+    input.value = '';
+    console.log(localStorage);
+});
+
+
+
+
 //setup variables for cocktail input field and button
 var cocktailName = document.querySelector('#cocktailName');
 var cocktailButton = document.querySelector('#cocktailButton');
