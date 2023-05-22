@@ -233,12 +233,16 @@ li {
 }
 
 @media screen and (max-width: 500px) {
+    .neonText {
+        height: 300px;
+    }
+
 	.neontextFont {
         font-size: 50px;
 	}
 
     h1 {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .search {
@@ -256,6 +260,15 @@ li {
 
     #cocktailRandom {
         padding: 5px;
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+    }
+
+    p {
+        width: 50%;
     }
 
 }

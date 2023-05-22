@@ -29,6 +29,7 @@ form.addEventListener('submit', function(e) {
     console.log(localStorage);
 });
 
+//---------------------------------------------------------------------------------------------------------------------------------//
 
 //setup variables for cocktail input field and button
 var cocktailName = document.querySelector('#cocktailName');
