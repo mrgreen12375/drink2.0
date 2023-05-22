@@ -115,7 +115,13 @@ body {
 }
 
 /*style for cocktail directory input field, button, and button hover*/
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
 #cocktailName {
+    margin: 0px 5px 0px 5px;
     border-radius: 5px;
     padding: 2px;
     text-align: center;
@@ -232,7 +238,24 @@ li {
 	}
 
     h1 {
-        font-size: 15px;
+        font-size: 13px;
+    }
+
+    .search {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cocktailName {
+        margin: 0px 0px 10px 0px;
+    }
+
+    #cocktailButton {
+        padding: 5px;
+    }
+
+    #cocktailRandom {
+        padding: 5px;
     }
 
 }
