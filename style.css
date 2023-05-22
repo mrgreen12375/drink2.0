@@ -225,3 +225,14 @@ li {
     list-style: none;
     font-size: 30px;
 }
+
+@media screen and (max-width: 500px) {
+	.neontextFont {
+        font-size: 50px;
+	}
+
+    h1 {
+        font-size: 15px;
+    }
+
+}

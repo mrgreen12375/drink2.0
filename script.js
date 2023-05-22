@@ -1,3 +1,4 @@
+//setup saving drink names
 const form = document.querySelector('#save-cocktail-form');
 const input = document.querySelector('#save-cocktail');
 const taskList = document.querySelector('#saved-cocktail-list');
@@ -27,8 +28,6 @@ form.addEventListener('submit', function(e) {
     input.value = '';
     console.log(localStorage);
 });
-
-
 
 
 //setup variables for cocktail input field and button
