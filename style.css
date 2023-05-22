@@ -78,12 +78,20 @@ body {
     cursor: pointer;
 }
 
+#saved-cocktail-list{
+    margin-right: 40px;
+}
+
 #saved-cocktail-list li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     color: white;
     background-color: grey;
     border-radius: 5px;
+    font-size: 20px;
     margin: 5px;
-    padding: 10px;
+    padding: 5px 10px 5px 20px;
 }
 
 #saved-cocktail-list button {
@@ -91,6 +99,7 @@ body {
     color: white;
     background-color: grey;
     border: none;
+    margin-left: 10px;
 }
 
 #saved-cocktail-list button:hover{

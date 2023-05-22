@@ -7,7 +7,7 @@ taskList.addEventListener('click', function(e) {
     if (e.target.tagName === 'BUTTON') {
         e.target.parentElement.remove();
         let inputTask = document.getElementById('save-cocktail');
-        localStorage.setItem('email', inputTask.value);
+        localStorage.setItem('text', inputTask.value);
     } else if (e.target.tagName === 'LI') {
         e.target.classList.toggle('task-complete');
     }
@@ -20,7 +20,7 @@ form.addEventListener('submit', function(e) {
     const removeBtn = document.createElement('button');
     let savedInput = input.value;
     removeBtn.innerText = 'X';
-    newTask.innerText = input.value;
+    newTask.innerText = savedInput;
     newTask.appendChild(removeBtn);
     taskList.appendChild(newTask);
 
