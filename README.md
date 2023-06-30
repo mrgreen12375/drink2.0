@@ -7,16 +7,16 @@ This project was to create an original application that pulls in server-side API
 ## Mock-up
 
 Landing Page
-![alt drink website landing page](./images/landing-page-mockup.png)
+![alt drink website landing page](./assets/images/landing-page-mockup.png)
 
 Search Drink By Name Functionality
-![alt drink website search example](./images/search-mockup.png)
+![alt drink website search example](./assets/images/search-mockup.png)
 
 Save Drink Name Functionality
-![alt drink website saved example](./images/saved-mockup.png)
+![alt drink website saved example](./assets/images/saved-mockup.png)
 
 ## Deployment Links
 
-- https://mrgreen12375.github.io/drink2.0/
+Deploy - https://mrgreen12375.github.io/drink2.0/
 
-- https://github.com/mrgreen12375/drink2.0
+GitHub Repo -  https://github.com/mrgreen12375/drink2.0
