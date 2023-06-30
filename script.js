@@ -1,33 +1,69 @@
 //setup saving drink names
-const form = document.querySelector('#save-cocktail-form');
-const input = document.querySelector('#save-cocktail');
-const taskList = document.querySelector('#saved-cocktail-list');
-let taskID = 0;
+var savedform = document.querySelector('#save-cocktail-form');
+var input = document.querySelector('#save-cocktail');
+var savedList = document.querySelector('#saved-cocktail-list');
+var saved = []
 
-taskList.addEventListener('click', function(e) {
-    if (e.target.tagName === 'BUTTON') {
-        e.target.parentElement.remove();
-        let inputTask = document.getElementById('save-cocktail');
-        localStorage.setItem('text', inputTask.value);
-    } else if (e.target.tagName === 'LI') {
-        e.target.classList.toggle('task-complete');
+function saveDrinkName(event) {
+    event.preventDefault();
+    var name = input.value.trim().charAt(0).toUpperCase() + input.value.trim().slice(1);
+    if(name == ''){
+        prompt.style.display = 'block';
+        promptTxt.textContent = "Alert: Please Enter Drink Name";
+        exitPrompt.addEventListener('click', function() {
+        prompt.style.display = 'none';
+        })
+        return
+    }  else if (name == saved) {
+        input.value = ''
+        prompt.style.display = 'block';
+        promptTxt.textContent = "Alert: Drink Already Saved";
+        exitPrompt.addEventListener('click', function() {
+        prompt.style.display = 'none';
+        })
+        return
+    } else {
+        saved.push(name);
+        window.localStorage.setItem('storedSaves', JSON.stringify(saved));
+        var storedSaves = window.localStorage.getItem("storedSaves")
+        saved = JSON.parse(storedSaves)
+        location.reload()
     }
-});
+}
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    console.log(input.value);
-    const newTask = document.createElement('li');
-    const removeBtn = document.createElement('button');
-    let savedInput = input.value;
-    removeBtn.innerText = 'X';
-    newTask.innerText = savedInput;
-    newTask.appendChild(removeBtn);
-    taskList.appendChild(newTask);
+function displaySavedList(){
+    for(var i = 0; i < saved.length; i++){
+        var savedListItem = document.createElement('li');
+        var removeBtn = document.createElement('button');
+        savedListItem.innerText = saved[i];
+        removeBtn.innerText = 'X';
+        savedList.appendChild(savedListItem);
+        savedListItem.appendChild(removeBtn);
+    }
+}
 
-    input.value = '';
-    console.log(localStorage);
-});
+function deleteDrinkName(event) {
+    if (event.target.tagName === 'BUTTON') {
+        event.target.parentElement.remove();
+        var inputTask = document.getElementById('saved-cocktail');
+        localStorage.setItem('storedSaves', inputTask);
+    } else if (e.target.tagName === 'LI') {
+        event.target.classList.toggle('task-complete');
+    }
+}
+
+function previouslySaved(){ 
+    var storedSaves = window.localStorage.getItem("storedSaves")
+    if(storedSaves){
+        saved = JSON.parse(storedSaves);
+        displaySavedList();
+    }
+}
+
+previouslySaved()
+console.log(saved)
+savedform.addEventListener('submit', saveDrinkName);
+savedList.addEventListener('click', deleteDrinkName);
 
 //---------------------------------------------------------------------------------------------------------------------------------//
 
