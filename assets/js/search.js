@@ -41,7 +41,7 @@ function getCocktailInfo() {
 //setup function to create elements for the API data parameters used with a for loop and if statement for the measurements/ingredients
 function displayCocktail(display) {
     console.log(display.drinks[0]);
-
+    cocktailName.value = '';
     var ingredients = document.querySelector('#ingredients');
 
     var drinkName = document.createElement('h2');
