@@ -40,7 +40,7 @@ function getCocktailInfo() {
 }
 //setup function to create elements for the API data parameters used with a for loop and if statement for the measurements/ingredients
 function displayCocktail(display) {
-    console.log(display.drinks[0]);
+
     cocktailName.value = '';
     var ingredients = document.querySelector('#ingredients');
 
@@ -50,20 +50,19 @@ function displayCocktail(display) {
     var img = document.createElement('img');
     img.src = display.drinks[0].strDrinkThumb;
 
-    ingredients.appendChild(drinkName);
-    ingredients.appendChild(img);
-
     var instructionInfo = document.createElement('p');
     instructionInfo.innerHTML = display.drinks[0].strInstructions;
-        
+
+    ingredients.appendChild(drinkName);
+    ingredients.appendChild(img);    
     ingredients.appendChild(instructionInfo);
 
     for (var i = 1; i < 16; i++) {
-        console.log(i); 
 
         if (display.drinks[0][`strIngredient${i}`] == null){
             return;
-        } else if (display.drinks[0][`strMeasure${i}`] == null){
+        }
+        if (display.drinks[0][`strMeasure${i}`] == null){
             return;
         }
 
