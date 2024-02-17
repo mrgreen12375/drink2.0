@@ -6,6 +6,9 @@ var prompt = document.getElementById('modal');
 var promptTxt = document.getElementById('promptTxt');
 var exitPrompt = document.getElementById('close');
 
+var ingredients = [];
+var measurements = [];
+
 //setup function to initiate modal if field is empty or get cocktail information
 function searchButton(event){
     event.preventDefault();
@@ -22,8 +25,14 @@ function searchButton(event){
 }
 //setup function to clear prior cocktail search
 function clearPriorSearch(){
-    ingredients.innerHTML = '';
+    ingredientCard.innerHTML = '';
 }
+
+function emptyArray(){
+    ingredients = [];
+    measurements = [];
+}
+
 //setup funtion to fetch cocktial API information, clear prior search, and display current cocktail information
 function getCocktailInfo() {
 
@@ -41,36 +50,53 @@ function getCocktailInfo() {
 //setup function to create elements for the API data parameters used with a for loop and if statement for the measurements/ingredients
 function displayCocktail(display) {
 
+    console.log(display)
+
     cocktailName.value = '';
-    var ingredients = document.querySelector('#ingredients');
-
-    var drinkName = document.createElement('h2');
-    drinkName.innerHTML = display.drinks[0].strDrink;
-
-    var img = document.createElement('img');
-    img.src = display.drinks[0].strDrinkThumb;
-
-    var instructionInfo = document.createElement('p');
-    instructionInfo.innerHTML = display.drinks[0].strInstructions;
-
-    ingredients.appendChild(drinkName);
-    ingredients.appendChild(img);    
-    ingredients.appendChild(instructionInfo);
 
     for (var i = 1; i < 16; i++) {
-
-        if (display.drinks[0][`strIngredient${i}`] == null){
-            return;
-        }
-        if (display.drinks[0][`strMeasure${i}`] == null){
-            return;
-        }
-
-        var ingredientLs = document.createElement('li');
-        ingredientLs.innerHTML = display.drinks[0][`strMeasure${i}`] + ' : ' + display.drinks[0][`strIngredient${i}`];
-       
-        ingredients.appendChild(ingredientLs);
+        ingredients.push(display.drinks[0][`strIngredient${i}`]);
+        measurements.push(display.drinks[0][`strMeasure${i}`]);
     }
+
+    var filteredIngredients = ingredients.filter(function (el) {
+        return el != null;
+    });
+
+    var filteredMeasurments = measurements.filter(function (el) {
+        return el != null;
+    });
+
+    var cocktailObject  = {
+        name: display.drinks[0].strDrink,
+        image: display.drinks[0].strDrinkThumb,
+        instructions: display.drinks[0].strInstructions, 
+        ingredients: filteredIngredients,
+        measurements: filteredMeasurments
+    }
+
+    console.log(cocktailObject);
+
+    var ingredientCard = document.querySelector('#ingredientCard');
+
+    var card = document.createElement('div');
+    card.setAttribute('class', 'order');
+    card.innerHTML =  ` <h2>${cocktailObject.name}</h2>
+                        <img src="${cocktailObject.image}"/>
+                        <p>${cocktailObject.instructions}</p> `;
+
+    ingredientCard.appendChild(card);
+
+    for (var i = 1; i < cocktailObject.measurements.length; i++) {
+
+        var ingredientList = document.createElement('li');
+        ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
+       
+        ingredientCard.appendChild(ingredientList);
+    }
+
+    emptyArray()
+    
 }
 //setup event listener for search button
 cocktailButton.addEventListener('click', searchButton);

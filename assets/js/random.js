@@ -8,7 +8,7 @@ function searchRandom(event){
 }
 //setup function to clear prior cocktail search
 function clearPriorSearch(){
-    ingredients.innerHTML = '';
+    ingredientCard.innerHTML = '';
 }
 //setup funtion to fetch cocktial API information, clear prior search, and display current cocktail information
 function getRandomCocktailInfo() {
@@ -27,7 +27,7 @@ function getRandomCocktailInfo() {
 //setup function to create elements for the API data parameters used with a for loop and if statement for the measurements/ingredients
 function displayRandomCocktail(display) {
 
-    var ingredients = document.querySelector('#ingredients');
+    var ingredientCard = document.querySelector('#ingredientCard');
 
     var drinkName = document.createElement('h2');
     drinkName.innerHTML = display.drinks[0].strDrink;
@@ -38,9 +38,9 @@ function displayRandomCocktail(display) {
     var instructionInfo = document.createElement('p');
     instructionInfo.innerHTML = display.drinks[0].strInstructions;
     
-    ingredients.appendChild(drinkName);
-    ingredients.appendChild(img);
-    ingredients.appendChild(instructionInfo);
+    ingredientCard.appendChild(drinkName);
+    ingredientCard.appendChild(img);
+    ingredientCard.appendChild(instructionInfo);
 
     for (var i = 1; i < 16; i++) {
 
@@ -54,7 +54,7 @@ function displayRandomCocktail(display) {
         var ingredientLs = document.createElement('li');
         ingredientLs.innerHTML = display.drinks[0][`strMeasure${i}`] + ' : ' + display.drinks[0][`strIngredient${i}`];
        
-        ingredients.appendChild(ingredientLs);
+        ingredientCard.appendChild(ingredientLs);
     }
 }
 //setup event listener for search button
