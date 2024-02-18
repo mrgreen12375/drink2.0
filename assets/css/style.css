@@ -3,7 +3,8 @@
     animation: flicker 1.5s infinite alternate;
     color: #fff;
     background-image: url(../images/bricks.jpg);
-    background-size: 100%; 
+    background-size: cover; 
+    background-position: 50%;
     height: 250px;
     width: 100%;
     display: flex;
