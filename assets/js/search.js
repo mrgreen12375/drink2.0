@@ -9,6 +9,9 @@ var exitPrompt = document.getElementById('close');
 var ingredients = [];
 var measurements = [];
 
+var save;
+var saved = [];
+
 //setup function to initiate modal if field is empty or get cocktail information
 function searchButton(event){
     event.preventDefault();
@@ -44,6 +47,9 @@ function getCocktailInfo() {
     })
     .then(function (data) {
         clearPriorSearch()
+        if(save){
+            save.setAttribute('style', 'display: none;');
+        }
         displayCocktail(data);
     });
 }
@@ -87,16 +93,41 @@ function displayCocktail(display) {
 
     ingredientCard.appendChild(card);
 
-    for (var i = 1; i < cocktailObject.measurements.length; i++) {
+    for (var i = 0; i < cocktailObject.measurements.length; i++) {
 
         var ingredientList = document.createElement('li');
-        ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
+        ingredientList.innerHTML = `${cocktailObject[i].measurements} : ${cocktailObject[i].ingredients}`;
        
         ingredientCard.appendChild(ingredientList);
     }
 
     emptyArray()
+    saveButton(cocktailObject)
+}
+
+function saveButton(cocktailObject) {
     
+    var form = document.querySelector("#form");
+
+    save = document.createElement('button');
+    save.textContent = "Save";
+
+    form.appendChild(save);
+
+    save.addEventListener('click', function(event){
+        event.preventDefault();
+
+        var savedCocktail = JSON.parse(localStorage.getItem("savedCocktail"))
+        if (savedCocktail !== null) {
+            saved = savedCocktail;
+        }
+
+        if(!saved.includes(cocktailObject)){
+        saved.push(cocktailObject);
+        window.localStorage.setItem('savedCocktail', JSON.stringify(saved));
+        save.setAttribute('style', 'display: none;');
+        }
+    })
 }
 //setup event listener for search button
 cocktailButton.addEventListener('click', searchButton);

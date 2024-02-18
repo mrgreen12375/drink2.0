@@ -20,7 +20,7 @@
 <!--setup main sections for instructions, links to list home page and beers, input field and search button for cocktails, and modal for alert.-->
 <body>
     <main>
-        <section class="order">
+        <!-- <section class="order">
             <form action="" id="save-cocktail-form">
                 <input type="text" id="save-cocktail" placeholder="Save Drink Name Here">
                 <button class="saveButton">Save</button>
@@ -28,14 +28,15 @@
             <ul id="saved-cocktail-list">         
             </ul>
         </section>
-        <section id="saveHistory"></section>
+        <section id="saveHistory"></section> -->
         <section class="order">
             <h1>Search below to find the ingredients of your favorite cocktail!</h1>
             <form class="search">
                 <input type="text" name="cocktailName" id="cocktailName" placeholder="Enter Drink Name Here">
-                <div>
-                    <button type="submit" id="cocktailButton">Search Cocktails</button>
-                    <button type="submit" id="cocktailRandom">Random Cocktails</button>
+                <div id="form">
+                    <button type="submit" id="cocktailButton">Search</button>
+                    <button type="submit" id="cocktailRandom">Random</button>
+                    <button type="submit" formaction="./favorites.html">Favorite</button>
                 </div>
             </form>
         </section>
@@ -48,7 +49,7 @@
         </section>
     </main>
 <!--setup link for cocktails.js-->
-    <script src="./assets/js/save.js"></script>
+    <!-- <script src="./assets/js/save.js"></script> -->
     <script src="./assets/js/search.js"></script>
     <script src="./assets/js/random.js"></script>
 </body>
