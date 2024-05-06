@@ -60,7 +60,7 @@ function displayCocktail(display) {
 
     cocktailName.value = '';
 
-    for (var i = 1; i < 16; i++) {
+    for (var i = 0; i < 16; i++) {
         ingredients.push(display.drinks[0][`strIngredient${i}`]);
         measurements.push(display.drinks[0][`strMeasure${i}`]);
     }
@@ -82,6 +82,7 @@ function displayCocktail(display) {
     }
 
     console.log(cocktailObject);
+    console.log(cocktailObject.measurements)
 
     var ingredientCard = document.querySelector('#ingredientCard');
 

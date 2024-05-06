@@ -45,7 +45,7 @@ function displayCocktail(display) {
 
     cocktailName.value = '';
 
-    for (var i = 1; i < 16; i++) {
+    for (var i = 0; i < 16; i++) {
         ingredients.push(display.drinks[0][`strIngredient${i}`]);
         measurements.push(display.drinks[0][`strMeasure${i}`]);
     }
@@ -78,7 +78,7 @@ function displayCocktail(display) {
 
     ingredientCard.appendChild(card);
 
-    for (var i = 1; i < cocktailObject.measurements.length; i++) {
+    for (var i = 0; i < cocktailObject.measurements.length; i++) {
 
         var ingredientList = document.createElement('li');
         ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
