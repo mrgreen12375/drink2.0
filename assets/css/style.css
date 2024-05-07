@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 /*style for header title*/
 .neonText {
     animation: flicker 1.5s infinite alternate;
@@ -48,65 +50,8 @@ main {
 /*style for the body background color*/
 body {
     background-color: black;
+    font-family: "Playfair Display", serif;
 }
-
-/*style for the save coctail form*/
-/* #save-cocktail-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-#save-cocktail {
-    border-radius: 5px;
-    padding: 2px;
-    text-align: center;
-    height: 30px;
-    width: 100%;
-}
-
-.saveButton {
-    color: white;
-    background-color: rgb(54, 104, 255);
-    margin: 10px;
-    padding: 10px 20px 10px 20px;
-    border-radius: 5px;
-}
-
-.saveButton:hover {
-    background-color: rgb(109, 145, 255);
-    cursor: pointer;
-}
-
-#saved-cocktail-list{
-    margin-right: 40px;
-}
-
-#saved-cocktail-list li{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: white;
-    background-color: grey;
-    border-radius: 5px;
-    font-size: 20px;
-    margin: 5px;
-    padding: 5px 10px 5px 20px;
-}
-
-#saved-cocktail-list button {
-    font-size: 20px;
-    color: white;
-    background-color: grey;
-    border: none;
-    margin-left: 10px;
-}
-
-#saved-cocktail-list button:hover{
-    font-weight: bold;
-    cursor: pointer;
-}  */
 
 /*style to order the cocktail directory*/
 .order {
@@ -158,14 +103,12 @@ a:hover {
 h1 {
     color: white;
     font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 /*style for search titles*/
 h4 {
     text-align: center;
     color: white;
-    font-family: "Pacifico",sans-serif;
     text-decoration: underline;
 }
 
@@ -195,7 +138,6 @@ h4 {
 }
 
 #close {
-    font-family: 'Courier New', Courier, monospace;
     color: #aaaaaa;
     border: 2px solid #aaaaaa;
     padding-left: 2px;
@@ -210,6 +152,15 @@ h4 {
   border: 2px solid rgba(253, 0, 0, .8);
   text-decoration: none;
   cursor: pointer;
+}
+
+#promptTxt li {
+    font-size: 20px;
+}
+
+#promptTxt li:hover {
+    color: white;
+    background-color: rgb(54, 104, 255);
 }
 
 /*style for cocktail directory information*/
