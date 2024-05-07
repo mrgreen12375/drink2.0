@@ -24,9 +24,9 @@ function emptyArray(){
 //setup funtion to fetch cocktial API information, clear prior search, and display current cocktail information
 function getRandomCocktailInfo() {
 
-    var cocktailInfo = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
+    var randomCocktailInfo = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
   
-    fetch(cocktailInfo)
+    fetch(randomCocktailInfo)
     .then(function (response) {
       return response.json();
     })
@@ -35,15 +35,11 @@ function getRandomCocktailInfo() {
         if(save){
             save.setAttribute('style', 'display: none;');
         }
-        displayCocktail(data);
+        displayRandomCocktail(data);
     });
 }
 //setup function to create elements for the API data parameters used with a for loop and if statement for the measurements/ingredients
-function displayCocktail(display) {
-
-    console.log(display)
-
-    cocktailName.value = '';
+function displayRandomCocktail(display) {
 
     for (var i = 0; i < 16; i++) {
         ingredients.push(display.drinks[0][`strIngredient${i}`]);
