@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <title>Drink</title>
     <link rel="shortcut icon" href="./assets/images/logo-fav.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css"/>
@@ -20,23 +22,16 @@
 <!--setup main sections for instructions, links to list home page and beers, input field and search button for cocktails, and modal for alert.-->
 <body>
     <main>
-        <!-- <section class="order">
-            <form action="" id="save-cocktail-form">
-                <input type="text" id="save-cocktail" placeholder="Save Drink Name Here">
-                <button class="saveButton">Save</button>
-            </form>            
-            <ul id="saved-cocktail-list">         
-            </ul>
-        </section>
-        <section id="saveHistory"></section> -->
         <section class="order">
             <h1>Search below to find the ingredients of your favorite cocktail!</h1>
             <form class="search">
-                <input type="text" name="cocktailName" id="cocktailName" placeholder="Enter Drink Name Here">
+                <div id="formInput">
+                    <input type="text" name="cocktailName" id="cocktailName" placeholder="Cocktail Name Here">
+                    <button type="submit" class="fa fa-search" id="cocktailButton"></button>
+                </div>
                 <div id="form">
-                    <button type="submit" id="cocktailButton">Search</button>
-                    <button type="submit" id="cocktailRandom">Random</button>
-                    <button type="submit" formaction="./favorites.html">Favorites</button>
+                    <button type="submit" class="cocktailRandom" id="cocktailRandom">Random</button>
+                    <button type="submit" formaction="./favorites.html" class="cocktailRandom">Favorites</button>
                 </div>
             </form>
         </section>
