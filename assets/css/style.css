@@ -88,7 +88,6 @@ body {
     cursor: pointer;
     border: none;
     transform: rotateY(180deg);
-    background-color: rgb(109, 145, 255);
 }
 
 #cocktailButton:hover {
@@ -101,93 +100,13 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    text-shadow: 0 1px 0 #000;
-  
-    --border-angle: 0turn; 
-    --main-bg: conic-gradient(
-        from var(--border-angle),
-        #213,
-        #112 5%,
-        #112 60%,
-        #213 95%
-      );
-    
-    border: solid 5px transparent;
-    border-radius: 2em;
-    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
-    
-    background: 
-      var(--main-bg) padding-box,
-      var(--gradient-border) border-box, 
-      var(--main-bg) border-box;
-    
-    background-position: center center;
-  
-    animation: bg-spin 3s linear infinite;
-  
-    &:hover {
-      animation-play-state: paused;
-    }
-}
-
-@property --border-angle {
-    syntax: "<angle>";
-    inherits: true;
-    initial-value: 0turn;
-  }
-
-  @keyframes bg-spin {
-    to {
-      --border-angle: 1turn;
-    }
-  }
-
-  #form button {
-    --border-width: 3px;
-  
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
+    width: 380px;
     height: 50px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    color: white;
-    background-color: rgb(54, 104, 255);
-    border-radius: var(--border-width);
-  
-    &::after {
-      position: absolute;
-      content: "";
-      top: calc(-1 * var(--border-width));
-      left: calc(-1 * var(--border-width));
-      z-index: -1;
-      width: calc(100% + var(--border-width) * 2);
-      height: calc(100% + var(--border-width) * 2);
-      background: linear-gradient(
-        60deg,
-        hsl(224, 85%, 66%),
-        hsl(269, 85%, 66%),
-        hsl(314, 85%, 66%),
-        hsl(359, 85%, 66%),
-        hsl(44, 85%, 66%),
-        hsl(89, 85%, 66%),
-        hsl(134, 85%, 66%),
-        hsl(179, 85%, 66%)
-      );
-      background-size: 300% 300%;
-      background-position: 0 50%;
-      border-radius: calc(2 * var(--border-width));
-      animation: moveGradient 4s alternate infinite;
-    }
-  }
-  
-  @keyframes moveGradient {
-    50% {
-      background-position: 100% 50%;
-    }
-  }
+    font-size: 10px;
+    background-color: black;
+    border: 3px solid rgb(54, 104, 255);
+    border-radius: 50px;
+}
 
 #form {
     display: flex;
@@ -195,12 +114,15 @@ body {
 }
 
 #form button {
+    text-transform: uppercase;
     border-radius: 5px;
-    background-color: rgb(54, 104, 255);
+    background-color: hsl(0, 0%, 0%);
+    border: 3px solid rgb(54, 104, 255);
+    height: 50px;
+    width: 130px;
     padding: 3px;
     color: white;
     cursor: pointer;
-    border: none;
 }
 
 #form button:hover {
@@ -355,16 +277,12 @@ li {
 	}
 
     h1 {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     .search {
         display: flex;
         flex-direction: column;
-    }
-
-    #cocktailName {
-        margin: 0px 0px 10px 0px;
     }
 
     #cocktailButton {
@@ -384,4 +302,11 @@ li {
         width: 50%;
     }
 
+    .formInput {
+        gap: 5px
+    }
+
+    #form button {
+        width: 120px;
+    }
 }
