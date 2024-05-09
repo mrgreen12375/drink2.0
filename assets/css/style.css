@@ -277,7 +277,7 @@ li {
 	}
 
     h1 {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .search {
@@ -308,5 +308,9 @@ li {
 
     #form button {
         width: 120px;
+    }
+
+    ol {
+        padding: 0px;
     }
 }
