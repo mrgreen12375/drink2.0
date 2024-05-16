@@ -67,7 +67,7 @@ function displayRandomCocktail(display) {
     var ingredientCard = document.querySelector('#ingredientCard');
 
     var card = document.createElement('div');
-    card.setAttribute('class', 'order');
+    card.setAttribute('class', 'favoriteCard');
     card.innerHTML =  ` <h2>${cocktailObject.name}</h2>
                         <img src="${cocktailObject.image}"/>
                         <p>${cocktailObject.instructions}</p> `;
@@ -79,7 +79,7 @@ function displayRandomCocktail(display) {
         var ingredientList = document.createElement('li');
         ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
        
-        ingredientCard.appendChild(ingredientList);
+        card.appendChild(ingredientList);
     }
 
     emptyArray()

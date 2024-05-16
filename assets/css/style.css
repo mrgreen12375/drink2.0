@@ -129,18 +129,24 @@ body {
     background-color: rgb(109, 145, 255);
 }
 
-a {
+.back {
+    text-transform: uppercase;
     border-radius: 5px;
-    background-color: rgb(54, 104, 255);
+    background-color: hsl(0, 0%, 0%);
+    border: 3px solid rgb(54, 104, 255);
+    height: 50px;
+    width: 130px;
     padding: 3px;
     color: white;
     cursor: pointer;
-    text-decoration: none;
+    margin-top: 30px;
 }
 
-a:hover {
+.back:hover {
     background-color: rgb(109, 145, 255);
 }
+
+
 
 /*style for h1 text color*/
 h1 {
