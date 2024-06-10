@@ -129,6 +129,11 @@ body {
     background-color: rgb(109, 145, 255);
 }
 
+.container {
+    position: relative;
+    top: 30px;
+}
+
 .back {
     text-transform: uppercase;
     border-radius: 5px;
@@ -139,7 +144,6 @@ body {
     padding: 3px;
     color: white;
     cursor: pointer;
-    margin-top: 30px;
 }
 
 .back:hover {
