@@ -131,6 +131,10 @@ function displayCocktail(display) {
         ingredientCard.appendChild(card);
     
         for (var i = 0; i < cocktailObject.ingredients.length; i++) {
+
+            if (cocktailObject.measurements[i] == undefined) {
+                cocktailObject.measurements[i] = "add";
+            }
     
             var ingredientList = document.createElement('li');
             ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
