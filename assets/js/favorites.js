@@ -13,7 +13,7 @@ function favoritesList() {
 
         favorites.appendChild(favoriteEl);
     } else {
-        for(let i=0; i < savedCocktail.length; i++){
+        for (let i = savedCocktail.length - 1; i >= 0; i--){
                     
             var favoriteEl = document.createElement('div');
             favoriteEl.setAttribute('class', 'favoriteCard')
