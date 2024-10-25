@@ -130,7 +130,7 @@ function displayCocktail(display) {
     
         ingredientCard.appendChild(card);
     
-        for (var i = 0; i < cocktailObject.measurements.length; i++) {
+        for (var i = 0; i < cocktailObject.ingredients.length; i++) {
     
             var ingredientList = document.createElement('li');
             ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;

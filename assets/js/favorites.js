@@ -23,9 +23,7 @@ function favoritesList() {
 
             favorites.appendChild(favoriteEl);
 
-            console.log(savedCocktail[i].measurements)
-
-            for (var j = 0; j < savedCocktail[i].measurements.length; j++) {
+            for (var j = 0; j < savedCocktail[i].ingredients.length; j++) {
 
                 var ingredientList = document.createElement('li');
                 ingredientList.innerHTML = `${savedCocktail[i].measurements[j]} : ${savedCocktail[i].ingredients[j]}`;
