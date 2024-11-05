@@ -50,23 +50,24 @@ function getCocktailInfo() {
         if(save){
             save.setAttribute('style', 'display: none;');
         }
-        if (data.length > 1) {
-            prompt.style.display = 'block';
-            promptTxt.textContent = 'There are multiple results with that name, did you mean...'
-            var promptList = document.createElement('ol');
-            promptTxt.append(promptList);
-            for (let i = 0; i < data.length; i++) {
-                var listItem = document.createElement('li');
-                listItem.textContent = data[i].strDrink;
-                promptList.append(listItem)
+        displayCocktail(data);
+    });
+}
 
-            }
-            exitPrompt.addEventListener('click', function() {
-                prompt.style.display = 'none';
-            })                
-        } else {
-            displayCocktail(data);
+function getListCocktailInfo(cocktail) {
+
+    var cocktailInfo = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
+  
+    fetch(cocktailInfo)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+        clearPriorSearch()
+        if(save){
+            save.setAttribute('style', 'display: none;');
         }
+        displayListCocktail(data);
     });
 }
 //setup function to create elements for the API data parameters used with a for loop and if statement for the measurements/ingredients
@@ -86,7 +87,7 @@ function displayCocktail(display) {
             listItem.onclick = function() {
             cocktailName.value = display.drinks[i].strDrink
             prompt.style.display = 'none';
-            cocktailButton.click();
+            getListCocktailInfo(cocktailName.value);
             }
         }
         exitPrompt.addEventListener('click', function() {
@@ -146,8 +147,61 @@ function displayCocktail(display) {
         saveButton(cocktailObject)
     }
 
-    
 }
+
+function displayListCocktail(display) {
+    console.log(display.drinks)
+
+        cocktailName.value = '';
+    
+        for (var i = 0; i < 16; i++) {
+            ingredients.push(display.drinks[0][`strIngredient${i}`]);
+            measurements.push(display.drinks[0][`strMeasure${i}`]);
+        }
+    
+        var filteredIngredients = ingredients.filter(function (el) {
+            return el != null;
+        });
+    
+        var filteredMeasurments = measurements.filter(function (el) {
+            return el != null;
+        });
+    
+        var cocktailObject  = {
+            name: display.drinks[0].strDrink,
+            image: display.drinks[0].strDrinkThumb,
+            instructions: display.drinks[0].strInstructions, 
+            ingredients: filteredIngredients,
+            measurements: filteredMeasurments
+        }
+    
+        console.log(cocktailObject);
+    
+        var ingredientCard = document.querySelector('#ingredientCard');
+    
+        var card = document.createElement('div');
+        card.setAttribute('class', 'favoriteCard');
+        card.innerHTML =  ` <h2>${cocktailObject.name}</h2>
+                            <img src="${cocktailObject.image}"/>
+                            <p>${cocktailObject.instructions}</p> `;
+    
+        ingredientCard.appendChild(card);
+    
+        for (var i = 0; i < cocktailObject.ingredients.length; i++) {
+
+            if (cocktailObject.measurements[i] == undefined) {
+                cocktailObject.measurements[i] = "add";
+            }
+    
+            var ingredientList = document.createElement('li');
+            ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
+           
+            card.appendChild(ingredientList);
+        }
+    
+        emptyArray()
+        saveButton(cocktailObject)
+    }
 
 function saveButton(cocktailObject) {
     

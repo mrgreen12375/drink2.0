@@ -6,12 +6,6 @@ var measurements = [];
 var save;
 var saved = [];
 
-function searchRandom(event){
-    event.preventDefault();
-    cocktail = cocktailName.value.trim();
-    
-    getRandomCocktailInfo()
-}
 //setup function to clear prior cocktail search
 function clearPriorSearch(){
     ingredientCard.innerHTML = '';
@@ -22,7 +16,8 @@ function emptyArray(){
     measurements = [];
 }
 //setup funtion to fetch cocktial API information, clear prior search, and display current cocktail information
-function getRandomCocktailInfo() {
+function getRandomCocktailInfo(event) {
+    event.preventDefault();
 
     var randomCocktailInfo = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
   
@@ -115,4 +110,4 @@ function saveButton(cocktailObject) {
     })
 }
 //setup event listener for search button
-cocktailRandom.addEventListener('click', searchRandom);
+cocktailRandom.addEventListener('click', getRandomCocktailInfo);
