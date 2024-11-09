@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+.landingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    width: 320px;
+    border: 2px solid rgb(0, 153, 255);
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
 /*style for header title*/
 .neonText {
     animation: flicker 1.5s infinite alternate;
@@ -7,7 +18,7 @@
     background-image: url(../images/bricks.jpg);
     background-size: cover; 
     background-position: 50%;
-    height: 250px;
+    height: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -17,7 +28,7 @@
   
   .neontextFont {
     font-family: "Pacifico",sans-serif;
-    font-size: 50px;
+    font-size: 45px;
   }
 
   /* Flickering animation */
@@ -50,7 +61,7 @@ main {
 /*style for the body background color*/
 body {
     background-color: black;
-    font-family: "Playfair Display", serif;
+    font-family: Bradley Hand, cursive;
 }
 
 /*style to order the cocktail directory*/
@@ -58,6 +69,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Bradley Hand, cursive;
 }
 
 /*style for cocktail directory input field, button, and button hover*/
@@ -76,12 +88,13 @@ body {
     padding: 2px;
     text-align: center;
     font-size: 20px;
+    font-family: Bradley Hand, cursive;
 }
 
 #cocktailButton {
     font-size: 15px;
     border-radius: 50%;
-    background-color: rgb(54, 104, 255);
+    background-color: rgb(0, 153, 255);
     padding: 10px;
     margin: 5px;
     color: white;
@@ -91,7 +104,7 @@ body {
 }
 
 #cocktailButton:hover {
-    background-color: rgb(109, 145, 255);
+    background-color: rgb(0, 204, 255);;
 }
 
 #formInput {
@@ -104,7 +117,7 @@ body {
     height: 50px;
     font-size: 10px;
     background-color: black;
-    border: 3px solid rgb(54, 104, 255);
+    border: 3px solid rgb(0, 153, 255);
     border-radius: 50px;
 }
 
@@ -117,16 +130,17 @@ body {
     text-transform: uppercase;
     border-radius: 5px;
     background-color: hsl(0, 0%, 0%);
-    border: 3px solid rgb(54, 104, 255);
+    border: 3px solid rgb(0, 153, 255);
     height: 50px;
     width: 130px;
     padding: 3px;
     color: white;
     cursor: pointer;
+    font-family: Bradley Hand, cursive;
 }
 
 #form button:hover {
-    background-color: rgb(109, 145, 255);
+    background-color: rgb(0, 204, 255);
 }
 
 .container {
@@ -138,16 +152,18 @@ body {
     text-transform: uppercase;
     border-radius: 5px;
     background-color: hsl(0, 0%, 0%);
-    border: 3px solid rgb(54, 104, 255);
+    border: 3px solid rgb(0, 153, 255);
     height: 50px;
     width: 130px;
     padding: 3px;
     color: white;
     cursor: pointer;
+    font-family: Bradley Hand, cursive;
+
 }
 
 .back:hover {
-    background-color: rgb(109, 145, 255);
+    background-color: rgb(0, 204, 255);
 }
 
 
@@ -207,12 +223,13 @@ h4 {
 }
 
 #promptTxt li {
+    font-family: Bradley Hand, cursive;
     font-size: 20px;
 }
 
 #promptTxt li:hover {
     color: white;
-    background-color: rgb(54, 104, 255);
+    background-color: rgb(0, 153, 255);
 }
 
 /*style for cocktail directory information*/
@@ -256,7 +273,7 @@ li {
     width: 300px;
     border: 2px solid white;
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 0px 10px 20px 10px;
 }
 
@@ -278,16 +295,12 @@ li {
 }
 
 @media screen and (max-width: 500px) {
-    .neonText {
-        height: 300px;
-    }
-
 	.neontextFont {
-        font-size: 50px;
+        font-size: 40px;
 	}
 
     h1 {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .search {
