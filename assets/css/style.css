@@ -301,7 +301,7 @@ li {
     font-size: 20px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	.neontextFont {
         font-size: 40px;
 	}
