@@ -165,7 +165,7 @@ body {
     padding: 3px;
     color: white;
     cursor: pointer;
-    font-family: Bradley Hand, cursive;
+    font-family: Blippo, fantasy;
 
 }
 
@@ -220,6 +220,7 @@ h4 {
     float: right;
     font-size: 18px;
     font-weight: bold;
+    height: 22px;
 }
 
 #close:hover, #close:focus {
@@ -230,7 +231,7 @@ h4 {
 }
 
 #promptTxt li {
-    font-family: Bradley Hand, cursive;
+    font-family: Blippo, fantasy;
     font-size: 20px;
 }
 
