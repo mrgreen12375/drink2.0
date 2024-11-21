@@ -63,7 +63,8 @@ function getListCocktailInfo(cocktail) {
       return response.json();
     })
     .then(function (data) {
-        clearPriorSearch()
+        console.log(data);
+        clearPriorSearch();
         if(save){
             save.setAttribute('style', 'display: none;');
         }
@@ -116,7 +117,8 @@ function displayCocktail(display) {
             image: display.drinks[0].strDrinkThumb,
             instructions: display.drinks[0].strInstructions, 
             ingredients: filteredIngredients,
-            measurements: filteredMeasurments
+            measurements: filteredMeasurments,
+            video: display.drinks[0].strVideo
         }
     
         console.log(cocktailObject);
@@ -141,6 +143,19 @@ function displayCocktail(display) {
             ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
            
             card.appendChild(ingredientList);
+        }
+
+        if (cocktailObject.video === null) {
+            console.log("no video available");
+        } else {
+            var videoEl = document.createElement('a');
+            videoEl.href = cocktailObject.video;
+            videoEl.target = "_blank";
+            videoEl.textContent = "Video";
+            videoEl.classList.add("video");
+
+
+            card.appendChild(videoEl);
         }
     
         emptyArray()
@@ -172,7 +187,8 @@ function displayListCocktail(display) {
             image: display.drinks[0].strDrinkThumb,
             instructions: display.drinks[0].strInstructions, 
             ingredients: filteredIngredients,
-            measurements: filteredMeasurments
+            measurements: filteredMeasurments,
+            video: display.drinks[0].strVideo
         }
     
         console.log(cocktailObject);
@@ -197,6 +213,19 @@ function displayListCocktail(display) {
             ingredientList.innerHTML = `${cocktailObject.measurements[i]} : ${cocktailObject.ingredients[i]}`;
            
             card.appendChild(ingredientList);
+        }
+
+        if (cocktailObject.video === null) {
+            console.log("no video available");
+        } else {
+            var videoEl = document.createElement('a');
+            videoEl.href = cocktailObject.video;
+            videoEl.target = "_blank";
+            videoEl.textContent = "Video";
+            videoEl.classList.add("video");
+
+
+            card.appendChild(videoEl);
         }
     
         emptyArray()

@@ -31,6 +31,19 @@ function favoritesList() {
                 favoriteEl.appendChild(ingredientList);
             }
 
+            if (savedCocktail[i].video === null) {
+                console.log("no video available");
+            } else {
+                var videoEl = document.createElement('a');
+                videoEl.href = savedCocktail[i].video;
+                videoEl.target = "_blank";
+                videoEl.textContent = "Video";
+                videoEl.classList.add("video");
+    
+    
+                favoriteEl.appendChild(videoEl);
+            }
+
         }
 
     }
