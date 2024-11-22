@@ -6,7 +6,6 @@ var measurements = [];
 var save;
 var saved = [];
 
-//setup function to clear prior cocktail search
 function clearPriorSearch(){
     ingredientCard.innerHTML = '';
 }
@@ -15,7 +14,7 @@ function emptyArray(){
     ingredients = [];
     measurements = [];
 }
-//setup funtion to fetch cocktial API information, clear prior search, and display current cocktail information
+
 function getRandomCocktailInfo(event) {
     event.preventDefault();
 
@@ -33,7 +32,7 @@ function getRandomCocktailInfo(event) {
         displayRandomCocktail(data);
     });
 }
-//setup function to create elements for the API data parameters used with a for loop and if statement for the measurements/ingredients
+
 function displayRandomCocktail(display) {
 
     for (var i = 0; i < 16; i++) {
@@ -123,5 +122,5 @@ function saveButton(cocktailObject) {
         }
     })
 }
-//setup event listener for search button
+
 cocktailRandom.addEventListener('click', getRandomCocktailInfo);
